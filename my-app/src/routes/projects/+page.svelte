@@ -1,3 +1,3 @@
 <h1 class="text-3xl font-bold underline">
-    Hey look a website!
+    Projects
 </h1>
