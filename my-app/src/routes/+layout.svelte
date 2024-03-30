@@ -3,9 +3,11 @@
     import '../app.css'
 </script>
 
-<nav>
+
+<nav class="flex justify-around">
     <a href="/">Home</a>
     <a href="/projects">Projects</a>
+    <a href="/contact">Contact</a>
 </nav>
 
 <slot />
