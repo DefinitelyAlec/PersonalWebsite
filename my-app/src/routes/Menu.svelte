@@ -10,9 +10,11 @@
 
 
 {#if open}
-    <div>
+    <!-- Make column of buttons, and make the div space stretch to the full width of the screen -->
+    <div class="grid grid-cols-1 gap-4 place-items-stretch">
         {#each ['Home', 'Projects', 'Contact'] as link, i}
-            <div class="btn" transition:fly={{ y: -15, delay: 50 * i}}>
+            <!-- Make each button have a minimum width so that they are all the same width -->
+            <div class="btn max-w-20" transition:fly={{ y: -15, delay: 50 * i}}>
                 {#if link=='Home'}
                     <a href="/">{link}</a>
                 {:else}
