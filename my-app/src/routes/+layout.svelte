@@ -4,10 +4,22 @@
 </script>
 
 
-<nav class="flex justify-around">
-    <a href="/">Home</a>
-    <a href="/projects">Projects</a>
-    <a href="/contact">Contact</a>
+<nav class="flex justify-end">
+    <div class="px-1">
+        <div class="btn">
+            <a href="/">Home</a>
+        </div>
+    </div>
+    <div class="px-1">
+        <div class="btn">
+            <a href="/projects">Projects</a>
+        </div>
+    </div>
+    <div class="px-1">
+        <div class="btn">
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
 </nav>
 
 <slot />
