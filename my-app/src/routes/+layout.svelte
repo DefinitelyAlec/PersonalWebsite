@@ -1,25 +1,20 @@
 <!-- Everything in here appears on all +page.svelte files -->
 <script>
     import '../app.css'
+
+    import { Hamburger } from 'svelte-hamburgers';
+    import Menu from './Menu.svelte';
+
+    /**
+     * @type {any}
+     */
+    let open;
 </script>
 
+<Hamburger 
+    bind:open 
+    --color="white" />
 
-<nav class="flex justify-end">
-    <div class="px-1">
-        <div class="btn">
-            <a href="/">Home</a>
-        </div>
-    </div>
-    <div class="px-1">
-        <div class="btn">
-            <a href="/projects">Projects</a>
-        </div>
-    </div>
-    <div class="px-1">
-        <div class="btn">
-            <a href="/contact">Contact</a>
-        </div>
-    </div>
-</nav>
+<Menu bind:open />
 
 <slot />
