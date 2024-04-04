@@ -8,13 +8,13 @@
     /**
      * @type {any}
      */
-    let open;
+    let open = false;
 </script>
 
-<Hamburger 
+<!-- <Hamburger 
     bind:open 
-    --color="white" />
+    --color="white" /> -->
 
-<Menu bind:open />
+<Menu/>
 
 <slot />
