@@ -13,7 +13,7 @@
 
 <div class="dropdown">
     
-        <Hamburger bind:open/>
+    <Hamburger bind:open --color="white"/>
     
     <Menu bind:open />
 </div>
