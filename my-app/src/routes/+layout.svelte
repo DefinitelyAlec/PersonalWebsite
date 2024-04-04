@@ -1,20 +1,21 @@
 <!-- Everything in here appears on all +page.svelte files -->
 <script>
-    import '../app.css'
+  import "../app.css";
 
-    import { Hamburger } from 'svelte-hamburgers';
-    import Menu from './Menu.svelte';
+  import { Hamburger } from "svelte-hamburgers";
+  import Menu from "./Menu.svelte";
 
-    /**
-     * @type {any}
-     */
-    let open = false;
+  /**
+   * @type {any}
+   */
+  let open = false;
 </script>
 
-<!-- <Hamburger 
-    bind:open 
-    --color="white" /> -->
+<Hamburger
+    bind:open
+    --color="white"/>
 
-<Menu/>
+<Menu 
+    bind:open/>
 
 <slot />
