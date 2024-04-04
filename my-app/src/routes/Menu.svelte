@@ -8,28 +8,22 @@
   export let open = false;
 </script>
 
-<div class="navbar">
-  <div class="navbar-start">
-    <div class="dropdown dropdown-open z-10 menu-vertical">
-      <ul
-        tabindex="-1"
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-      >
-        {#if open}
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/projects">Projects</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        {/if}
-      </ul>
-    </div>
-  </div>
-</div>
+{#if open}
+  <ul
+    tabindex="-1"
+    class="menu menu-lg dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+  >
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/projects">Projects</a>
+    </li>
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+{/if}
 
 <!-- 
 <div class="navbar bg-base-100">

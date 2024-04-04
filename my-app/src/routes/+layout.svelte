@@ -11,11 +11,18 @@
   let open = false;
 </script>
 
-<Hamburger
+<div class="dropdown">
+    
+        <Hamburger bind:open/>
+    
+    <Menu bind:open />
+</div>
+
+<!-- <Hamburger
     bind:open
     --color="white"/>
 
 <Menu 
-    bind:open/>
+    bind:open/> -->
 
 <slot />
