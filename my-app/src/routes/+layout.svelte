@@ -4,6 +4,7 @@
 
   import { Hamburger } from "svelte-hamburgers";
   import Menu from "./Menu.svelte";
+  import Footer from "./Footer.svelte";
 
   /**
    * @type {any}
@@ -26,3 +27,6 @@
     bind:open/> -->
 
 <slot />
+
+
+<Footer/>
