@@ -1,3 +1,9 @@
+<script>
+    import MdiEmailOutline from '~icons/mdi/email-outline';
+    import MdiGithub from '~icons/mdi/github';
+    import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
+</script>
+
 <div class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
@@ -20,7 +26,7 @@
         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
         <li><a href="/">Homepage</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/projects">Projects</a></li>
       </ul>
     </div>
   </div>
@@ -29,47 +35,13 @@
   </div>
   <div class="navbar-end">
     <button class="btn btn-ghost btn-circle">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        ><path d="m0 0h8v6h-8zm.75 .75v4.5h6.5v-4.5zM0 0l4 3 4-3v1l-4 3-4-3z"/></svg
-      >
+        <MdiEmailOutline/>
     </button>
     <button class="btn btn-ghost btn-circle">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        ><path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-        /></svg
-      >
+      <MdiGithub/>
     </button>
     <button class="btn btn-ghost btn-circle">
-      <div class="indicator">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-          /></svg
-        >
-        <span class="badge badge-xs badge-primary indicator-item"></span>
-      </div>
+      <MdiMoonWaningCrescent/>
     </button>
   </div>
 </div>
