@@ -4,6 +4,7 @@
 
   import { Hamburger } from "svelte-hamburgers";
   import Menu from "./Menu.svelte";
+  import Header from "./Header.svelte";
 
   /**
    * @type {any}
@@ -11,12 +12,14 @@
   let open = false;
 </script>
 
-<div class="dropdown">
+<Header />
+
+<!-- <div class="dropdown">
     
     <Hamburger bind:open --color="white"/>
     
     <Menu bind:open />
-</div>
+</div> -->
 
 <!-- <Hamburger
     bind:open
