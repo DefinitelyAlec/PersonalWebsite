@@ -53,7 +53,7 @@
           <MdiEmailOutline/>
       </button>
     </a>
-    <a href="https://github.com/DefinitelyAlec">
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/DefinitelyAlec">
       <button class="btn btn-ghost btn-circle">
         <MdiGithub/>
       </button>
