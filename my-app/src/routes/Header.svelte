@@ -48,12 +48,16 @@
     <a class="btn btn-ghost text-xl" href="/">Alec Parent</a>
   </div>
   <div class="navbar-end">
-    <button class="btn btn-ghost btn-circle">
-        <MdiEmailOutline/>
-    </button>
-    <button class="btn btn-ghost btn-circle">
-      <MdiGithub/>
-    </button>
+    <a href="mailto:alecparent@rocketmail.com">
+      <button class="btn btn-ghost btn-circle">
+          <MdiEmailOutline/>
+      </button>
+    </a>
+    <a href="https://github.com/DefinitelyAlec">
+      <button class="btn btn-ghost btn-circle">
+        <MdiGithub/>
+      </button>
+    </a>
     <button class="btn btn-ghost btn-circle" on:click={toggleTheme}>
       <MdiMoonWaningCrescent/>
     </button>
