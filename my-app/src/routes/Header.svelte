@@ -3,11 +3,19 @@
   import MdiGithub from '~icons/mdi/github';
   import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
   import { theme } from '../stores';
+  import { onMount } from 'svelte';
 
   function toggleTheme(){
     theme.set($theme=="light"? "dark" : "light");
     console.log($theme);
   }
+
+  // mount the theme variable onto the data-theme attribute so it's dynamic
+  onMount(() => {
+    theme.subscribe(value => {
+      document.documentElement.setAttribute('data-theme', value);
+    });
+  });
 </script>
 
 <div class="navbar bg-base-100">
