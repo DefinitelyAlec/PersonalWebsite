@@ -1,7 +1,13 @@
 <script>
-    import MdiEmailOutline from '~icons/mdi/email-outline';
-    import MdiGithub from '~icons/mdi/github';
-    import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
+  import MdiEmailOutline from '~icons/mdi/email-outline';
+  import MdiGithub from '~icons/mdi/github';
+  import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
+  import { theme } from '../stores';
+
+  function toggleTheme(){
+    theme.set($theme=="light"? "dark" : "light");
+    console.log($theme);
+  }
 </script>
 
 <div class="navbar bg-base-100">
@@ -40,7 +46,7 @@
     <button class="btn btn-ghost btn-circle">
       <MdiGithub/>
     </button>
-    <button class="btn btn-ghost btn-circle">
+    <button class="btn btn-ghost btn-circle" on:click={toggleTheme}>
       <MdiMoonWaningCrescent/>
     </button>
   </div>
