@@ -20,7 +20,7 @@
 
 <div class="navbar bg-base-100">
   <div class="navbar-start">
-    <div class="dropdown">
+    <!-- <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,11 @@
         <li><a href="/">Homepage</a></li>
         <li><a href="/projects">Projects</a></li>
       </ul>
-    </div>
+    </div> -->
+
+    <a class="btn btn-ghost text-xl" href="/">Home</a>
+    <a class="btn btn-ghost text-xl" href="/projects">Projects</a>
+    
   </div>
   <div class="navbar-center">
     <a class="btn btn-ghost text-xl" href="/">Alec Parent</a>
