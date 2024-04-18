@@ -2,13 +2,13 @@
     Projects
 </h1>
 
-<h2 class="text-2xl font-bold py-12">
+<h2 class="text-2xl underline text-cyan-600 font-bold py-12">
     <a target="_blank" rel="noopener noreferrer" href="https://rps-sim.netlify.app/">Rock Paper Scissors Battle Royale</a>
 </h2>
 
 <!-- <iframe src="https://rps-sim.netlify.app/" title="Rock Paper Scissors Simulator" width="800em" height="850em"></iframe> -->
 
-<h2 class="text-2xl font-bold py-12">
+<h2 class="text-2xl underline text-cyan-600 font-bold py-12">
     <a target="_blank" rel="noopener noreferrer" href="https://movingforwardutah.com/">Info Website for a Therapy Center</a>
 </h2>
 <h2 class="text-2xl font-bold py-12">
