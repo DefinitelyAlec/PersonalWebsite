@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
     let xPos = 0;
     let yPos = 0;
 
-    function mouseMoved(event) {
+    function mouseMoved(event: MouseEvent) {
         xPos = event.clientX;
         yPos = event.clientY;
     }
@@ -19,8 +19,8 @@
 
 
 <style lang="postcss">
-    :global(body) {
-        @apply bg-zinc-900;
+    .page-container {
+        position: relative; /* prevents scrollbars */
     }
 
     .circle {

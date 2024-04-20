@@ -5,6 +5,16 @@
 
 </script>
 
-<Header />
+<main>
+  <Header />
 
-<slot />
+  <slot />
+</main>
+
+<style>
+  main {
+    overflow: hidden;
+
+  }
+
+</style>
