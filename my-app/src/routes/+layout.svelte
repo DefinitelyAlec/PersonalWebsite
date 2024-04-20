@@ -5,15 +5,21 @@
   let xPos = 0;
   let yPos = 0;
 
+  // Function to convert pixels to em units based on the font size of the parent element
+  function pxToEm(px: number) {
+    const fontSize = parseFloat(getComputedStyle(document.body).fontSize);
+    return px / fontSize;
+  }
+
   function mouseMoved(event: MouseEvent) {
-      xPos = event.clientX;
-      yPos = event.clientY;
+      xPos = pxToEm(event.clientX);
+      yPos = pxToEm(event.clientY);
   }
 </script>
 
 <main>
   <div role="document" class="page-container" on:mousemove={mouseMoved}>
-    <div class="circle" style="top: {yPos-200}px; left: {xPos-200}px;"></div>
+    <div class="circle" style="top: {yPos-15}em; left: {xPos-15}em;"></div>
     
     <Header />
 
@@ -34,8 +40,8 @@
 
   .circle {
     position: absolute;
-    width: 400px; /* Increased size */
-    height: 400px; /* Increased size */
+    width: 30em; /* Increased size */
+    height: 30em; /* Increased size */
     border-radius: 50%;
     /* Background made of translucent pixels */
     background-image: radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%);
