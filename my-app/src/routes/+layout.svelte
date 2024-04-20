@@ -5,8 +5,8 @@
 
   let xPos = 0;
   let yPos = 0;
-  let prevXPos = 0;
-  let prevYPos = 0;
+  let targetX = 0;
+  let targetY = 0;
 
   // Function to convert pixels to em units based on the font size of the parent element
   function pxToEm(px: number) {
@@ -14,29 +14,31 @@
     return px / fontSize;
   }
 
-  function mouseMoved(event: MouseEvent) {
-    prevXPos = xPos;
-    prevYPos = yPos;
+  function lerp(start: number, end: number, t: number) {
+    return start + t * (end - start);
+  }
 
-    xPos = pxToEm(event.clientX);
-    yPos = pxToEm(event.clientY);
+  function updateCirclePosition() {
+    // Move the circle towards the cursor at a constant slow rate
+    xPos = lerp(xPos, targetX, 0.05);
+    yPos = lerp(yPos, targetY, 0.05);
+    requestAnimationFrame(updateCirclePosition);
   }
 
   onMount(() => {
-    // Smooth out the movement of the circle
-    const smoothness = 0.97; // Adjust this value for the desired smoothness
-    const updateCirclePosition = () => {
-      xPos += (prevXPos - xPos) * smoothness;
-      yPos += (prevYPos - yPos) * smoothness;
-      requestAnimationFrame(updateCirclePosition);
-    };
-    requestAnimationFrame(updateCirclePosition);
+    updateCirclePosition();
+  });
+
+  // Update target position when the cursor moves
+  window.addEventListener('mousemove', (event: MouseEvent) => {
+    targetX = pxToEm(event.clientX);
+    targetY = pxToEm(event.clientY);
   });
 </script>
 
 <main>
-  <div role="document" class="page-container" on:mousemove={mouseMoved}>
-    <div class="circle" style="top: {yPos-15}em; left: {xPos-15}em;"></div>
+  <div class="page-container">
+    <div class="circle" style="top: {yPos - 15}em; left: {xPos - 15}em;"></div>
     
     <Header />
 
@@ -57,8 +59,8 @@
 
   .circle {
     position: absolute;
-    width: 30em; /* Increased size */
-    height: 30em; /* Increased size */
+    width: 30em; /* Adjusted size in em units */
+    height: 30em; /* Adjusted size in em units */
     border-radius: 50%;
     /* Background made of translucent pixels */
     background-image: radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%);
