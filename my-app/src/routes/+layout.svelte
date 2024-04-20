@@ -26,11 +26,6 @@
 </main>
 
 <style lang="postcss">
-  main {
-    overflow: hidden;
-
-  }
-
   .page-container {
       overflow: hidden;
       position: relative; /* prevents scrollbars */
