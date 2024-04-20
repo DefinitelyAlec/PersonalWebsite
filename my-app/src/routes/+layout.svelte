@@ -1,9 +1,12 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import "../app.css";
   import Header from "./Header.svelte";
 
   let xPos = 0;
   let yPos = 0;
+  let prevXPos = 0;
+  let prevYPos = 0;
 
   // Function to convert pixels to em units based on the font size of the parent element
   function pxToEm(px: number) {
@@ -12,9 +15,23 @@
   }
 
   function mouseMoved(event: MouseEvent) {
-      xPos = pxToEm(event.clientX);
-      yPos = pxToEm(event.clientY);
+    prevXPos = xPos;
+    prevYPos = yPos;
+
+    xPos = pxToEm(event.clientX);
+    yPos = pxToEm(event.clientY);
   }
+
+  onMount(() => {
+    // Smooth out the movement of the circle
+    const smoothness = 0.97; // Adjust this value for the desired smoothness
+    const updateCirclePosition = () => {
+      xPos += (prevXPos - xPos) * smoothness;
+      yPos += (prevYPos - yPos) * smoothness;
+      requestAnimationFrame(updateCirclePosition);
+    };
+    requestAnimationFrame(updateCirclePosition);
+  });
 </script>
 
 <main>
