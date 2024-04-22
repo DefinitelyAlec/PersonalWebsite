@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { browser } from '$app/environment';
   
     let xPos = 0;
     let yPos = 0;
@@ -27,11 +28,17 @@
       updateCirclePosition();
     });
   
-    // Update target position when the cursor moves
-    window.addEventListener('mousemove', (event: MouseEvent) => {
+    // check to make sure code isn't run on the server
+    // otherwise a "window is not defined" error occurs
+    // anything that references DOM elements needs this check
+    if(browser){
+      // Update target position when the cursor moves
+      window.addEventListener('mousemove', (event: MouseEvent) => {
       targetX = pxToEm(event.clientX);
       targetY = pxToEm(event.clientY);
-    });
+      });
+    }
+    
   </script>
   
   <style lang="postcss">
