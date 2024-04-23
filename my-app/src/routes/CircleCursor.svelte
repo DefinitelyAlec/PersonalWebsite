@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { browser } from '$app/environment';
+    import { theme } from '../stores';
   
     let xPos = 0;
     let yPos = 0;
@@ -38,6 +39,18 @@
       targetY = pxToEm(event.clientY);
       });
     }
+    // let circleColor = 'radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%)'; // Default color
+
+    // if ($theme == "light"){
+    //   circleColor = "radial-gradient(circle, rgba(255,255,224,0.2) 0%, rgba(255,255,224,0) 60%)"
+    // } else {
+    //   circleColor = "radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%)"
+    // }
+    // Subscribe to theme changes
+    // let unsubscribe = theme.subscribe(value => {
+    //   // Update circle color based on theme
+    //   circleColor = value === 'light' ? 'radial-gradient(circle, rgba(255,255,224,0.2) 0%, rgba(255,255,224,0) 60%)' : 'radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%)';
+    // });
     
   </script>
   
@@ -48,12 +61,15 @@
       height: 30em; /* Adjusted size in em units */
       border-radius: 50%;
       /* Background made of translucent pixels */
-      background-image: radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%);
+       /*background-image: radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%); */
       background-size: 100% 100%;
       background-repeat: no-repeat;
       pointer-events: none; /* Allows mouse events to pass through */
     }
   </style>
-  
-  <div class="circle" style="top: {yPos - 15}em; left: {xPos - 15}em;"></div>
-  
+  {#if $theme == "light"}
+    <div class="circle" style="top: {yPos - 15}em; left: {xPos - 15}em; background-image: radial-gradient(circle, rgba(255,0,224,0.2) 0%, rgba(255,0,224,0) 60%);"></div>
+  {:else}
+    <div class="circle" style="top: {yPos - 15}em; left: {xPos - 15}em; background-image: radial-gradient(circle, rgba(0,0,255,0.2) 0%, rgba(0,0,255,0) 60%);"></div>
+
+  {/if}
