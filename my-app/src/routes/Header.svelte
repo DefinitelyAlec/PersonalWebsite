@@ -53,7 +53,7 @@
         >
       </div>
       <ul
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+        class="menu dropdown-content p-2 shadow bg-base-100 rounded-box"
       >
         <li><a href="/" class="home-btn">Home</a></li>
         <li><a href="/projects" class="projects-btn">Projects</a></li>
@@ -84,10 +84,7 @@
           /></svg
         >
       </div>
-      <ul
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-        style="margin-left: auto; margin-right: auto;"
-      >
+      <ul class="dropdown-content shadow bg-base-100 rounded-box">
         <li>
           <a title="Email" href="mailto:alecparent@rocketmail.com">
             <button class="btn btn-ghost btn-circle">
