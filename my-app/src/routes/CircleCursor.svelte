@@ -42,10 +42,10 @@
   }
 
   // Subscribe to theme changes
-  const unsubscribe = theme.subscribe(value => {
+  theme.subscribe(value => {
     // Update circle color based on theme
     circleColor = value === 'light' ? 'rgba(255,255,0,0.2)' : 'rgba(0,0,255,0.2)';
-    console.log(circleColor)
+    // console.log(circleColor)
   });
 </script>
 

@@ -10,7 +10,7 @@
 
   function toggleTheme(){
     theme.set($theme=="light"? "dark" : "light");
-    console.log($theme);
+    // console.log($theme);
   }
 
   // mount the theme variable onto the data-theme attribute so it's dynamic
