@@ -2,7 +2,7 @@
   import MdiEmailOutline from '~icons/mdi/email-outline';
   import MdiGithub from '~icons/mdi/github';
   import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
-  import { theme } from '../stores';
+  import { theme } from '../stores/content';
   import { onMount } from 'svelte';
   
   let dropdownVisibleStart = false;
@@ -21,12 +21,9 @@
     
     // Check if buttons overflow and toggle dropdown visibility accordingly
     const navbarStart = document.querySelector('.navbar-start');
-    const navbarEnd = document.querySelector('.navbar-end');
-    // const navbarCenter = document.querySelector('.navbar-center');
 
     const checkOverflow = () => {
       dropdownVisibleStart = navbarStart.scrollWidth > navbarStart.clientWidth;
-      // centerVisible = navbarCenter.scrollWidth > navbarCenter.clientWidth;
     };
 
     window.addEventListener('resize', checkOverflow);
@@ -64,9 +61,9 @@
     <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={dropdownVisibleStart}>Projects</a>
     
   </div>
-  <!-- <div class="navbar-center" class:hidden={!centerVisible}>
+  <div class="navbar-center">
     <a class="btn btn-ghost text-xl" href="/">Alec Parent</a>
-  </div> -->
+  </div>
   <div class="navbar-end">
     <div class="dropdown" class:hidden={!dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">

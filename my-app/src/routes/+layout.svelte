@@ -2,15 +2,6 @@
   import "../app.css";
   import Header from "./Header.svelte";
   import CircleCursor from "./CircleCursor.svelte";
-  import { theme } from '../stores';
-  import { onMount } from 'svelte';
-
-
-  onMount(() => {
-    theme.subscribe(value => {
-      document.documentElement.setAttribute('data-theme', value);
-    });
-  });
 </script>
 
 <main>

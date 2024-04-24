@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
-  import { theme } from '../stores';
+  import { theme } from '../stores/content';
 
   let xPos = 0;
   let yPos = 0;
@@ -43,9 +43,7 @@
 
   // Subscribe to theme changes
   theme.subscribe(value => {
-    // Update circle color based on theme
     circleColor = value === 'light' ? 'rgba(255,255,0,0.2)' : 'rgba(0,0,255,0.2)';
-    // console.log(circleColor)
   });
 </script>
 
