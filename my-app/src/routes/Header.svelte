@@ -61,9 +61,9 @@
     <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={dropdownVisibleStart}>Projects</a>
     
   </div>
-  <div class="navbar-center">
+  <!-- <div class="navbar-center">
     <a class="btn btn-ghost text-xl" href="/">Alec Parent</a>
-  </div>
+  </div> -->
   <div class="navbar-end">
     <div class="dropdown" class:hidden={!dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
