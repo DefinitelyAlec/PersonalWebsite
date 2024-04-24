@@ -26,7 +26,7 @@
 
     const checkOverflow = () => {
       dropdownVisibleStart = navbarStart.scrollWidth > navbarStart.clientWidth;
-      centerVisible = navbarCenter.scrollWidth > navbarCenter.clientWidth;
+      // centerVisible = navbarCenter.scrollWidth > navbarCenter.clientWidth;
     };
 
     window.addEventListener('resize', checkOverflow);
