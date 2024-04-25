@@ -18,6 +18,24 @@
     href="https://movingforwardutah.com/">Info Website for a Therapy Center</a>
 </h2>
 
+<div class="collapse collapse-arrow bg-base-200">
+    <input type="checkbox" checked/> 
+    <div class="collapse-title text-xl font-medium">
+        Ecommerce Website for a Hobby Shop
+    </div>
+    <div class="collapse-content prose"> 
+      <ul>
+        <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            href="https://mrshobby.com/">Website link</a></li>
+        <li>Made a React API to get the BigCommerce site to properly pull product based off their category</li>
+        <li>Helped translate non-technical desires for features into a technical roadmap</li>
+        <li>Established a consistent and reliable data pipeline between the POS and website</li>
+    </ul>
+    </div>
+</div>
+
 <div class="py-12">
     <h2 class="py-6">
         <a class="text-2xl underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 
