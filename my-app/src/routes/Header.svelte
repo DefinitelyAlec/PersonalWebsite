@@ -1,6 +1,9 @@
 <script>
+  // @ts-ignore
   import MdiEmailOutline from '~icons/mdi/email-outline';
+  // @ts-ignore
   import MdiGithub from '~icons/mdi/github';
+  // @ts-ignore
   import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
   import { theme } from '../stores/content';
   import { onMount } from 'svelte';
@@ -23,6 +26,7 @@
     const navbarStart = document.querySelector('.navbar-start');
 
     const checkOverflow = () => {
+      // @ts-ignore
       dropdownVisibleStart = navbarStart.scrollWidth > navbarStart.clientWidth;
     };
 
