@@ -59,12 +59,24 @@
                 href="https://mrshobby.com/">Website link</a></li>
             <li>Made a React API to get the BigCommerce site to properly pull product based off their category</li>
             <li>Helped translate non-technical desires for features into a technical roadmap</li>
-            <li>Established a consistent and reliable data pipeline between the POS and website</li>
+            <li>Established a consistent and reliable data pipeline between the point of sale system and website</li>
         </ul>
         </div>
     </div>
 </div>
 
-<h2 class="text-2xl font-bold py-12">
-    Python batch installer
-</h2>
+<div class="py-6">
+    <div class="collapse collapse-arrow bg-base-200">
+        <input type="checkbox" checked/> 
+        <div class="collapse-title text-xl font-medium">
+            Python Batch Program Installer - Project at UFirst Credit Union
+        </div>
+        <div class="collapse-content prose"> 
+        <ul>
+            <li>Made a batch installer in Python using Tkinter and leveraging Multiprocessing to chain together installations while timing them</li>
+            <li>Developed a simple and intuitive UI to select programs desired to install and leave out</li>
+            <li>Frequently communicated with different departments to ensure custom installations are ran smoothly and can be automated</li>
+        </ul>
+        </div>
+    </div>
+</div>
