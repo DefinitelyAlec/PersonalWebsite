@@ -2,8 +2,6 @@
     Projects
 </h1>
 
-<!-- <iframe src="https://rps-sim.netlify.app/" title="Rock Paper Scissors Simulator" width="800em" height="850em"></iframe> -->
-
 <div class="py-6">
     <div class="collapse collapse-arrow bg-base-200">
         <input type="checkbox" checked/> 

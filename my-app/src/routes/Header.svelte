@@ -9,7 +9,6 @@
   import { onMount } from 'svelte';
   
   let dropdownVisibleStart = false;
-  // let centerVisible = true;
 
   function toggleTheme(){
     theme.set($theme=="light"? "dark" : "light");
