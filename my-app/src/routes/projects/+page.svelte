@@ -1,6 +1,12 @@
+<script>
+    import Project from '../Project.svelte';
+</script>
+
 <h1 class="text-3xl font-bold text-center py-12">
     Projects
 </h1>
+
+<Project answer={'43'}/>
 
 <div class="py-6">
     <div class="collapse collapse-arrow bg-base-200">
