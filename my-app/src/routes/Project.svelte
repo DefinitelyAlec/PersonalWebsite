@@ -1,10 +1,29 @@
 <script>
 
     export let title;
+    export let website = undefined;
     export let description
 </script>
 
-<p>the answer is {title}</p>
-{#each description as point}
-    <p>* {point}</p>
-{/each}
+<div class="py-6">
+    <div class="collapse collapse-arrow bg-base-200">
+        <input type="checkbox" checked/> 
+        <div class="collapse-title text-xl font-medium">
+            {title}
+        </div>
+        <div class="collapse-content prose"> 
+        <ul>
+            {#if {website} == undefined}
+                <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    href="{website}">Website link</a></li>
+            {/if}
+            
+            {#each description as point}
+                <li>{point}</li>
+            {/each}
+        </ul>
+        </div>
+    </div>
+</div>
