@@ -57,4 +57,4 @@
   }
 </style>
 
-<div class="circle" style="top: {yPos - 15}em; left: {xPos - 15}em; background-image: radial-gradient(circle, {circleColor} 0%, rgba(0,0,0,0) 60%);"></div>
+<div class="circle" style="z-index: 100; top: {yPos - 15}em; left: {xPos - 15}em; background-image: radial-gradient(circle, {circleColor} 0%, rgba(0,0,0,0) 60%);"></div>
