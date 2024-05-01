@@ -6,7 +6,10 @@
     Projects
 </h1>
 
-<Project answer={'43'}/>
+<Project 
+    title={'Test'}
+    description={['test1','test2']}
+/>
 
 <div class="py-6">
     <div class="collapse collapse-arrow bg-base-200">

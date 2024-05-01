@@ -1,6 +1,10 @@
 <script>
 
-    export let answer;
+    export let title;
+    export let description
 </script>
 
-<p>the answer is {answer}</p>
+<p>the answer is {title}</p>
+{#each description as point}
+    <p>* {point}</p>
+{/each}
