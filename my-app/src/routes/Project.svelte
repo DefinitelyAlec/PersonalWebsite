@@ -13,7 +13,7 @@
         </div>
         <div class="collapse-content prose"> 
         <ul>
-            {#if {website} == undefined}
+            {#if {website} != undefined}
                 <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 
                     target="_blank" 
                     rel="noopener noreferrer" 
