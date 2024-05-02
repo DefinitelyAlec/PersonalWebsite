@@ -7,7 +7,7 @@
 
 <div class="py-6">
     <div class="collapse collapse-arrow bg-base-200">
-        <input type="checkbox" checked/> 
+        <input class="dropdown-input" type="checkbox" checked/> 
         <div class="collapse-title text-xl font-medium">
             {title}
         </div>

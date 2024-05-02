@@ -1,10 +1,25 @@
-<script>
+<script lang="ts">
     import Project from '../Project.svelte';
+
+    function manipulateDropdowns(className: String, open: Boolean) {
+    const inputs = document.querySelectorAll(`.${className}`);
+    
+    inputs.forEach(input => {
+        if(open){
+            input.checked = true;
+        }else{
+            input.checked = false;
+        }
+    });
+  }
 </script>
 
 <h1 class="text-3xl font-bold text-center py-12">
     Projects
 </h1>
+
+<button class="btn" on:click={() => manipulateDropdowns("dropdown-input", false)}>Close All</button>
+<button class="btn" on:click={() => manipulateDropdowns("dropdown-input", true)}>Open All</button>
 
 <Project 
     title={'Rock Paper Scissors Battle Royale'}
