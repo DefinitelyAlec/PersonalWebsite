@@ -11,7 +11,7 @@
         <div class="collapse-title text-xl font-medium">
             {title}
         </div>
-        <div class="collapse-content prose"> 
+        <div class="collapse-content prose max-w-full"> 
         <ul>
             {#if website != undefined}
                 <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 

@@ -39,15 +39,15 @@
 />
 
 <Project 
-    title={'Ecommerce Website for a Hobby Shop'}
+    title={'Ecommerce Website for Mrs Hobby Shop'}
     website={'https://mrshobby.com/'}
     description={['Made a React API to get the BigCommerce site to properly pull product based off their category',
-                'Helped translate non-technical desires for features into a technical roadmap',
+                'Built realistic technical roadmap for client given the existing site and its constraints',
                 'Established a consistent and reliable data pipeline between the point of sale system and website']}
 />
 
 <Project 
-    title={'Python Batch Program Installer - Project at UFirst Credit Union'}
+    title={'Python Batch Program Installer'}
     description={['Made a batch installer in Python using Tkinter and leveraging Multiprocessing to chain together installations while timing them',
                 'Developed a simple and intuitive UI to select programs desired to install and leave out',
                 'Frequently communicated with different departments to ensure custom installations are ran smoothly and can be automated']}
