@@ -28,5 +28,6 @@
   .content {
     flex: 1; /* Fill remaining vertical space */
     overflow-y: auto; /* Allow content to scroll if it exceeds the available space */
+    scrollbar-gutter: stable;
   }
 </style>
