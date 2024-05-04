@@ -1,5 +1,6 @@
 <script>
 
+    export let skills = undefined;
     export let title;
     export let website = undefined;
     export let description
@@ -13,6 +14,12 @@
         </div>
         <div class="collapse-content prose max-w-full"> 
         <ul>
+            {#if skills != undefined}
+                {#each skills as skill}
+                    <p>{skill}</p>
+                {/each}
+            {/if}
+
             {#if website != undefined}
                 <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 
                     target="_blank" 

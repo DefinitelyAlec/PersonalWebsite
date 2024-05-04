@@ -22,8 +22,11 @@
 
 <button class="btn" on:click={() => manipulateDropdowns("dropdown-input", false)}>Close All</button>
 
+<!-- search button? -->
+
 <Project 
     title={'Rock Paper Scissors Battle Royale'}
+    skills={['HTML','CSS','JS']}
     website={'https://rps-sim.netlify.app/'}
     description={['Built out game in pure HTML/JS/CSS',
                 'Leveraged ChatGPT to exponentially speed up development by generating boilerplate code and correcting/adding details',
