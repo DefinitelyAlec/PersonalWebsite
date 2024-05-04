@@ -18,8 +18,9 @@
     Projects
 </h1>
 
-<button class="btn" on:click={() => manipulateDropdowns("dropdown-input", false)}>Close All</button>
 <button class="btn" on:click={() => manipulateDropdowns("dropdown-input", true)}>Open All</button>
+
+<button class="btn" on:click={() => manipulateDropdowns("dropdown-input", false)}>Close All</button>
 
 <Project 
     title={'Rock Paper Scissors Battle Royale'}
