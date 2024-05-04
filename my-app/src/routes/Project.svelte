@@ -1,9 +1,9 @@
 <script>
 
-    export let skills = undefined;
+    export let skills;
     export let title;
-    export let website = undefined;
-    export let description
+    export let website;
+    export let description;
 </script>
 
 <div class="py-6">
