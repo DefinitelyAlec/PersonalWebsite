@@ -15,7 +15,6 @@
   function toggleTheme(){
 
     theme.set($theme=="light"? "dark" : "light");
-    // console.log($theme);
   }
 
   // mount the theme variable onto the data-theme attribute so it's dynamic
@@ -112,7 +111,7 @@
           <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme}>
             {#if $theme == 'dark'}
               <MdiMoonWaningCrescent/>
-            {:else}
+            {:else if $theme == 'light'}
               <MdiWhiteBalanceSunny/>
             {/if}
           </button>
@@ -139,7 +138,7 @@
     <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme} class:hidden={dropdownVisibleStart}>
       {#if $theme == 'dark'}
         <MdiMoonWaningCrescent/>
-      {:else}
+      {:else if $theme == 'light'}
         <MdiWhiteBalanceSunny/>
       {/if}
     </button>
