@@ -5,12 +5,15 @@
   import MdiGithub from '~icons/mdi/github';
   // @ts-ignore
   import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
+  // @ts-ignore
+  import MdiWhiteBalanceSunny from '~icons/mdi/white-balance-sunny';
   import { theme } from '../stores/content';
   import { onMount } from 'svelte';
   
   let dropdownVisibleStart = false;
 
   function toggleTheme(){
+
     theme.set($theme=="light"? "dark" : "light");
     // console.log($theme);
   }
@@ -100,8 +103,18 @@
           </a>
         </li>
         <li>
+          <!-- <label title="Toggle Theme" class="swap swap-rotate btn btn-ghost btn-circle">
+            <input type="checkbox"  />
+              <MdiMoonWaningCrescent class="swap-off" on:click={toggleTheme}/>
+              <MdiWhiteBalanceSunny class="swap-on" on:click={toggleTheme}/>
+          </label> -->
+
           <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme}>
-            <MdiMoonWaningCrescent/>
+            {#if $theme == 'dark'}
+              <MdiMoonWaningCrescent/>
+            {:else}
+              <MdiWhiteBalanceSunny/>
+            {/if}
           </button>
         </li>
       </ul>
@@ -117,8 +130,19 @@
         <MdiGithub/>
       </button>
     </a>
+
+    <!-- <label class="swap swap-rotate btn btn-ghost btn-circle" class:hidden={dropdownVisibleStart}>
+      <input type="checkbox" on:click={toggleTheme}/>
+        <MdiMoonWaningCrescent class="swap-off"/>
+        <MdiWhiteBalanceSunny class="swap-on"/>
+    </label> -->
     <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme} class:hidden={dropdownVisibleStart}>
-      <MdiMoonWaningCrescent/>
+      {#if $theme == 'dark'}
+        <MdiMoonWaningCrescent/>
+      {:else}
+        <MdiWhiteBalanceSunny/>
+      {/if}
     </button>
+    
   </div>
 </div>
