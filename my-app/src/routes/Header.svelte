@@ -22,13 +22,31 @@
     theme.subscribe(value => {
       document.documentElement.setAttribute('data-theme', value);
     });
-    
     // Check if buttons overflow and toggle dropdown visibility accordingly
     const navbarStart = document.querySelector('.navbar-start');
+    const navbarEnd = document.querySelector('.navbar-end');
+
 
     const checkOverflow = () => {
+      const navbarStartRect = navbarStart?.getBoundingClientRect()
+      const navbarEndRect = navbarEnd?.getBoundingClientRect()
+      const startWidth = navbarStartRect.width
+      const endWidth = navbarEndRect.width
+      
       // @ts-ignore
-      dropdownVisibleStart = navbarStart.scrollWidth > navbarStart.clientWidth;
+      if (startWidth + endWidth < document.body.clientWidth){
+        // console.log("document: "+document.body.clientWidth)
+        // console.log("navbars: "+(Number(startWidth) + Number(endWidth)))
+        console.log("start right: "+navbarStartRect.right)
+        console.log("end right: "+navbarEndRect.left)
+
+        console.log("navbars: "+(navbarStartRect.width + navbarEndRect.width))
+        console.log("window: "+document.body.clientWidth)
+
+        dropdownVisibleStart = false;
+      } else {
+        dropdownVisibleStart = true;
+      }
     };
 
     window.addEventListener('resize', checkOverflow);
