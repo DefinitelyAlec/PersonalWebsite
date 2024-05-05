@@ -8,7 +8,7 @@
   // @ts-ignore
   import MdiWhiteBalanceSunny from '~icons/mdi/white-balance-sunny';
   import { theme } from '../stores/content';
-  import { onMount } from 'svelte';
+  import { onDestroy, onMount } from 'svelte';
   
   let dropdownVisibleStart = false;
 
@@ -17,45 +17,43 @@
     theme.set($theme=="light"? "dark" : "light");
   }
 
+  function checkOverflow() {
+    const navStart = document.getElementById('navStart');
+    const navEnd = document.getElementById('navEnd');
+    const container = document.querySelector('.navbar');
+    
+    if (navStart && navEnd) {
+      // Temporarily show the elements to measure their widths
+      document.documentElement.setAttribute('navStart', 'false');
+      document.documentElement.setAttribute('navEnd', 'false');
+
+
+      const isOverflowing = navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth || navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth;
+      console.log("navStart: "+navStart.scrollWidth+ " container: "+container.clientWidth)
+      console.log(isOverflowing)
+      dropdownVisibleStart = isOverflowing;            
+    }
+  }
+
   // mount the theme variable onto the data-theme attribute so it's dynamic
   onMount(() => {
     theme.subscribe(value => {
       document.documentElement.setAttribute('data-theme', value);
     });
-    // Check if buttons overflow and toggle dropdown visibility accordingly
-    const navbarStart = document.querySelector('.navbar-start');
-    const navbarEnd = document.querySelector('.navbar-end');
 
-
-    const checkOverflow = () => {
-      const navbarStartRect = navbarStart?.getBoundingClientRect()
-      const navbarEndRect = navbarEnd?.getBoundingClientRect()
-      const startWidth = navbarStartRect.width
-      const endWidth = navbarEndRect.width
-      
-      // @ts-ignore
-      if (startWidth + endWidth < document.body.clientWidth){
-        // console.log("document: "+document.body.clientWidth)
-        // console.log("navbars: "+(Number(startWidth) + Number(endWidth)))
-        console.log("start right: "+navbarStartRect.right)
-        console.log("end right: "+navbarEndRect.left)
-
-        console.log("navbars: "+(navbarStartRect.width + navbarEndRect.width))
-        console.log("window: "+document.body.clientWidth)
-
-        dropdownVisibleStart = false;
-      } else {
-        dropdownVisibleStart = true;
-      }
-    };
-
-    window.addEventListener('resize', checkOverflow);
+    window.addEventListener('resize', checkOverflow)
     checkOverflow();
   });
+
+  // Cleanup event listener on component unmount
+  // onDestroy(() => {
+  //   window.removeEventListener('resize', checkOverflow);
+  // });
+  
 </script>
 
 <div class="navbar bg-base-100">
-  <div class="navbar-start">
+  <div id="navStart" class="navbar-start">
     <div class="dropdown" class:hidden={!dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
         <svg
@@ -80,14 +78,12 @@
       </ul>
     </div>
 
-    <a class="btn btn-ghost text-xl home-btn" href="/" class:hidden={dropdownVisibleStart}>Home</a>
-    <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={dropdownVisibleStart}>Projects</a>
+      <a class="btn btn-ghost text-xl home-btn" href="/" class:hidden={dropdownVisibleStart}>Home</a>
+      <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={dropdownVisibleStart}>Projects</a>  
     
   </div>
-  <!-- <div class="navbar-center">
-    <a class="btn btn-ghost text-xl" href="/">Alec Parent</a>
-  </div> -->
-  <div class="navbar-end">
+
+  <div id="navEnd" class="navbar-end">
     <div class="dropdown" class:hidden={!dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
         <svg
@@ -120,12 +116,6 @@
           </a>
         </li>
         <li>
-          <!-- <label title="Toggle Theme" class="swap swap-rotate btn btn-ghost btn-circle">
-            <input type="checkbox"  />
-              <MdiMoonWaningCrescent class="swap-off" on:click={toggleTheme}/>
-              <MdiWhiteBalanceSunny class="swap-on" on:click={toggleTheme}/>
-          </label> -->
-
           <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme}>
             {#if $theme == 'dark'}
               <MdiMoonWaningCrescent/>
@@ -137,29 +127,26 @@
       </ul>
     </div>
 
-    <a title="Email" href="mailto:alecparent@rocketmail.com" class:hidden={dropdownVisibleStart}>
-      <button class="btn btn-ghost btn-circle">
-          <MdiEmailOutline/>
+      <a title="Email" href="mailto:alecparent@rocketmail.com" class:hidden={dropdownVisibleStart}>
+        <button class="btn btn-ghost btn-circle">
+            <MdiEmailOutline/>
+        </button>
+      </a>
+  
+      <a title="GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/DefinitelyAlec" class:hidden={dropdownVisibleStart}>
+        <button class="btn btn-ghost btn-circle">          
+          <MdiGithub/>
+        </button>
+      </a>
+  
+      <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme} class:hidden={dropdownVisibleStart}>
+        {#if $theme == 'dark'}
+          <MdiMoonWaningCrescent/>
+        {:else if $theme == 'light'}
+          <MdiWhiteBalanceSunny/>
+        {/if}
       </button>
-    </a>
-    <a title="GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/DefinitelyAlec" class:hidden={dropdownVisibleStart}>
-      <button class="btn btn-ghost btn-circle">          
-        <MdiGithub/>
-      </button>
-    </a>
-
-    <!-- <label class="swap swap-rotate btn btn-ghost btn-circle" class:hidden={dropdownVisibleStart}>
-      <input type="checkbox" on:click={toggleTheme}/>
-        <MdiMoonWaningCrescent class="swap-off"/>
-        <MdiWhiteBalanceSunny class="swap-on"/>
-    </label> -->
-    <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme} class:hidden={dropdownVisibleStart}>
-      {#if $theme == 'dark'}
-        <MdiMoonWaningCrescent/>
-      {:else if $theme == 'light'}
-        <MdiWhiteBalanceSunny/>
-      {/if}
-    </button>
+    
     
   </div>
 </div>
