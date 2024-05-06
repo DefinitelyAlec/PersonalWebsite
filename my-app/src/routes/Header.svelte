@@ -7,30 +7,28 @@
   import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
   // @ts-ignore
   import MdiWhiteBalanceSunny from '~icons/mdi/white-balance-sunny';
-  import { theme } from '../stores/content';
-  import { onDestroy, onMount } from 'svelte';
+  import { theme, navThreshhold } from '../stores/content';
+  import { onMount } from 'svelte';
   
   let dropdownVisibleStart = true;
-  let navThreshhold = -1
   let navThreshholdSet = false;
 
   function toggleTheme(){
-
     theme.set($theme=="light"? "dark" : "light");
   }
 
   function checkOverflow() {
     const navStart = document.getElementById('navStart');
-
+    if ($navThreshhold != 0){
+      navThreshholdSet = true
+    }
     // console.log("scroll: "+navStart.scrollWidth)
     // console.log("client: "+navStart?.clientWidth)
     // console.log("threshhold: "+navThreshhold)
     if (navStart && !navThreshholdSet && navStart.scrollWidth != navStart.clientWidth){
       navThreshholdSet = true;
-      navThreshhold = navStart.scrollWidth
-    }
-    // see if there is a way to not have this hardcoded 
-    else if (navStart && navThreshholdSet && navStart.clientWidth < navThreshhold) {
+      navThreshhold.set(navStart.scrollWidth)
+    } else if (navStart && navThreshholdSet && navStart.clientWidth < $navThreshhold) {
       dropdownVisibleStart = false;
     } else {
       dropdownVisibleStart = true;
@@ -42,6 +40,7 @@
     theme.subscribe(value => {
       document.documentElement.setAttribute('data-theme', value);
     });
+
 
     window.addEventListener('resize', checkOverflow)
     checkOverflow();
