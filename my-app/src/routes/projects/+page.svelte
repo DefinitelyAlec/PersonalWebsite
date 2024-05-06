@@ -2,7 +2,7 @@
   import Project from "../Project.svelte";
 
   function manipulateDropdowns(className: String, open: Boolean) {
-    const inputs = document.querySelectorAll(`.${className}`);
+    const inputs = document.querySelectorAll(`.${className}`) as NodeListOf<HTMLInputElement>;
 
     inputs.forEach((input) => {
       if (open) {
