@@ -10,7 +10,9 @@
   import { theme } from '../stores/content';
   import { onDestroy, onMount } from 'svelte';
   
-  let dropdownVisibleStart = false;
+  let dropdownVisibleStart = true;
+  let navThreshhold = -1
+  let navThreshholdSet = false;
 
   function toggleTheme(){
 
@@ -19,31 +21,19 @@
 
   function checkOverflow() {
     const navStart = document.getElementById('navStart');
-    const navEnd = document.getElementById('navEnd');
-    const container = document.querySelector('.navbar');
 
-    let startWidth = -1;
-    let endWidth = -1;
-    
-    if (navStart && navEnd && container) {
-      if (startWidth != 0 && endWidth != 0) {
-        startWidth = navStart.scrollWidth;
-        endWidth = navEnd.scrollWidth;
-        console.log("start: "+startWidth)
-        console.log("end: "+endWidth)
-        console.log("container: "+container.scrollWidth)
-      }
-
-      if (container && startWidth + endWidth < container.scrollWidth){
-        dropdownVisibleStart = false;
-      } else {
-        dropdownVisibleStart = true;
-      }
-        // const isOverflowing = navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth || navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth;
-        // console.log("navStart: "+navStart.scrollWidth+ " container: "+container.clientWidth)
-        // console.log(isOverflowing)
-        // dropdownVisibleStart = isOverflowing; 
-                 
+    // console.log("scroll: "+navStart.scrollWidth)
+    // console.log("client: "+navStart?.clientWidth)
+    // console.log("threshhold: "+navThreshhold)
+    if (navStart && !navThreshholdSet && navStart.scrollWidth != navStart.clientWidth){
+      navThreshholdSet = true;
+      navThreshhold = navStart.scrollWidth
+    }
+    // see if there is a way to not have this hardcoded 
+    else if (navStart && navThreshholdSet && navStart.clientWidth < navThreshhold) {
+      dropdownVisibleStart = false;
+    } else {
+      dropdownVisibleStart = true;
     }
   }
 
@@ -56,17 +46,12 @@
     window.addEventListener('resize', checkOverflow)
     checkOverflow();
   });
-
-  // Cleanup event listener on component unmount
-  // onDestroy(() => {
-  //   window.removeEventListener('resize', checkOverflow);
-  // });
   
 </script>
 
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-100 m-0">
   <div id="navStart" class="navbar-start">
-    <div class="dropdown" class:hidden={!dropdownVisibleStart}>
+    <div class="dropdown" class:hidden={dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -90,13 +75,13 @@
       </ul>
     </div>
 
-      <a class="btn btn-ghost text-xl home-btn" href="/" class:hidden={dropdownVisibleStart}>Home</a>
-      <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={dropdownVisibleStart}>Projects</a>  
+      <a class="btn btn-ghost text-xl home-btn" href="/" class:hidden={!dropdownVisibleStart}>Home</a>
+      <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={!dropdownVisibleStart}>Projects</a>  
     
   </div>
 
   <div id="navEnd" class="navbar-end">
-    <div class="dropdown" class:hidden={!dropdownVisibleStart}>
+    <div class="dropdown" class:hidden={dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -139,19 +124,19 @@
       </ul>
     </div>
 
-      <a title="Email" href="mailto:alecparent@rocketmail.com" class:hidden={dropdownVisibleStart}>
+      <a title="Email" href="mailto:alecparent@rocketmail.com" class:hidden={!dropdownVisibleStart}>
         <button class="btn btn-ghost btn-circle">
             <MdiEmailOutline/>
         </button>
       </a>
   
-      <a title="GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/DefinitelyAlec" class:hidden={dropdownVisibleStart}>
+      <a title="GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/DefinitelyAlec" class:hidden={!dropdownVisibleStart}>
         <button class="btn btn-ghost btn-circle">          
           <MdiGithub/>
         </button>
       </a>
   
-      <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme} class:hidden={dropdownVisibleStart}>
+      <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme} class:hidden={!dropdownVisibleStart}>
         {#if $theme == 'dark'}
           <MdiMoonWaningCrescent/>
         {:else if $theme == 'light'}
