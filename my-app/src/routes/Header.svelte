@@ -21,17 +21,29 @@
     const navStart = document.getElementById('navStart');
     const navEnd = document.getElementById('navEnd');
     const container = document.querySelector('.navbar');
+
+    let startWidth = -1;
+    let endWidth = -1;
     
-    if (navStart && navEnd) {
-      // Temporarily show the elements to measure their widths
-      document.documentElement.setAttribute('navStart', 'false');
-      document.documentElement.setAttribute('navEnd', 'false');
+    if (navStart && navEnd && container) {
+      if (startWidth != 0 && endWidth != 0) {
+        startWidth = navStart.scrollWidth;
+        endWidth = navEnd.scrollWidth;
+        console.log("start: "+startWidth)
+        console.log("end: "+endWidth)
+        console.log("container: "+container.scrollWidth)
+      }
 
-
-      const isOverflowing = navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth || navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth;
-      console.log("navStart: "+navStart.scrollWidth+ " container: "+container.clientWidth)
-      console.log(isOverflowing)
-      dropdownVisibleStart = isOverflowing;            
+      if (container && startWidth + endWidth < container.scrollWidth){
+        dropdownVisibleStart = false;
+      } else {
+        dropdownVisibleStart = true;
+      }
+        // const isOverflowing = navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth || navStart.scrollWidth+navEnd.scrollWidth > container.clientWidth;
+        // console.log("navStart: "+navStart.scrollWidth+ " container: "+container.clientWidth)
+        // console.log(isOverflowing)
+        // dropdownVisibleStart = isOverflowing; 
+                 
     }
   }
 
