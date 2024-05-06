@@ -1,9 +1,9 @@
 <script>
 
-    export let skills;
-    export let title;
-    export let website;
-    export let description;
+    export let skills = "";
+    export let title = "Default Title";
+    export let website = "";
+    export let description = ["Default Description"];
 </script>
 
 <div class="py-6">
@@ -14,13 +14,13 @@
         </div>
         <div class="collapse-content prose max-w-full"> 
         <ul>
-            {#if skills != undefined}
+            {#if skills != ""}
                 {#each skills as skill}
                     <p>{skill}</p>
                 {/each}
             {/if}
 
-            {#if website != undefined}
+            {#if website != ""}
                 <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 
                     target="_blank" 
                     rel="noopener noreferrer" 
