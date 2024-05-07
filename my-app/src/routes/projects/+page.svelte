@@ -14,6 +14,14 @@
   }
   const projects = [
     {
+      title: "This Website",
+      description: [
+        "Built out in Sveltekit using DaisyUI",
+        "Focus on quick deliverability, maintainability, and strengthening common full tech-stack for future webapps",
+        "Maintained consistency in development to strengthen coding habits and push myself to try new things",
+      ],
+    },
+    {
       title: "Rock Paper Scissors Battle Royale",
       website: "https://rps-sim.netlify.app/",
       description: [
