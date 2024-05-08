@@ -24,6 +24,7 @@
     },
     {
       title: "Rock Paper Scissors Battle Royale",
+      skills: ["JS", "HTML", "CSS", "ChatGPT"],
       website: "https://rps-sim.netlify.app/",
       description: [
         "Built out game in pure HTML/JS/CSS",
@@ -33,6 +34,7 @@
     },
     {
       title: "Info Website for a Therapy Center",
+      skills: ["JS", "HTML", "CSS"],
       website: "https://movingforwardutah.com/",
       description: [
         "Worked with Wordpress to improve existing site structure and content",
@@ -43,6 +45,7 @@
     },
     {
       title: "Ecommerce Website for Mrs Hobby Shop",
+      skills: ["React", "JS", "HTML", "CSS"],
       website: "https://mrshobby.com/",
       description: [
         "Made a React API to get the BigCommerce site to properly pull product based off their category",
@@ -52,6 +55,7 @@
     },
     {
       title: "Python Batch Program Installer",
+      skills: ["Python", "Tkinter", "Multiprocessing"],
       description: [
         "Made a batch installer in Python using Tkinter and leveraging Multiprocessing to chain together installations while timing them",
         "Developed a simple and intuitive UI to select programs desired to install and leave out",
