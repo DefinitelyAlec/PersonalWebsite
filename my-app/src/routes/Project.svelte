@@ -16,7 +16,7 @@
         <ul>
             {#if skills != ""}
                 {#each skills as skill}
-                    <p>{skill}</p>
+                    <div class="badge badge-lg badge-outline">{skill}</div>
                 {/each}
             {/if}
 

@@ -15,6 +15,7 @@
   const projects = [
     {
       title: "This Website",
+      skills: ["Svelte", "JS", "HTML", "CSS"],
       description: [
         "Built out in Sveltekit using DaisyUI",
         "Focus on quick deliverability, maintainability, and strengthening common full tech-stack for future webapps",
