@@ -15,13 +15,15 @@
         <div class="collapse-content prose max-w-full"> 
         <ul>
             {#if skills != ""}
+                <div id="skillContainer" class="space-x-3">
                 {#each skills as skill}
                     <div class="badge badge-lg badge-outline">{skill}</div>
                 {/each}
+                </div>
             {/if}
 
             {#if website != ""}
-                <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 font-bold" 
+                <li><a class="link link-primary" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     href="{website}">Website link</a></li>
