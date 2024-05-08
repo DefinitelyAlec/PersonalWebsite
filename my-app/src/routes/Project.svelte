@@ -1,6 +1,6 @@
 <script>
 
-    export let skills = "";
+    export let skills = [''];
     export let title = "Default Title";
     export let website = "";
     export let description = ["Default Description"];
@@ -14,7 +14,7 @@
         </div>
         <div class="collapse-content prose max-w-full"> 
         <ul>
-            {#if skills != ""}
+            {#if skills != ['']}
                 <div id="skillContainer" class="space-x-3">
                 {#each skills as skill}
                     <div class="badge badge-lg badge-outline">{skill}</div>
