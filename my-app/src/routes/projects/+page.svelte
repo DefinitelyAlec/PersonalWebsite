@@ -1,6 +1,8 @@
 <script lang="ts">
   import Project from "../Project.svelte";
 
+  import MdiFilter from '~icons/mdi/filter';
+
   function manipulateDropdowns(className: String, open: Boolean) {
     const inputs = document.querySelectorAll(`.${className}`) as NodeListOf<HTMLInputElement>;
 
@@ -78,6 +80,9 @@
 >
 
 <!-- search button? -->
+<button
+  class="btn"
+><MdiFilter/></button>
 
 {#each projects as project}
   <Project {...project} />
