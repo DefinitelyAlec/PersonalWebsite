@@ -1,8 +1,8 @@
 <script>
   // @ts-ignore
-  import MdiEmailOutline from '~icons/mdi/email-outline';
+  // import MdiEmailOutline from '~icons/mdi/email-outline';
   // @ts-ignore
-  import MdiGithub from '~icons/mdi/github';
+  // import MdiGithub from '~icons/mdi/github';
   // @ts-ignore
   import MdiMoonWaningCrescent from '~icons/mdi/moon-waning-crescent';
   // @ts-ignore
@@ -96,7 +96,7 @@
           /></svg
         >
       </div>
-      <ul class="dropdown-content shadow bg-base-100 rounded-box">
+      <!-- <ul class="dropdown-content shadow bg-base-100 rounded-box">
         <li>
           <a title="Email" href="mailto:alecparent@rocketmail.com">
             <button class="btn btn-ghost btn-circle">
@@ -120,10 +120,10 @@
             {/if}
           </button>
         </li>
-      </ul>
+      </ul> -->
     </div>
 
-      <a title="Email" href="mailto:alecparent@rocketmail.com" class:hidden={!dropdownVisibleStart}>
+      <!-- <a title="Email" href="mailto:alecparent@rocketmail.com" class:hidden={!dropdownVisibleStart}>
         <button class="btn btn-ghost btn-circle">
             <MdiEmailOutline/>
         </button>
@@ -133,9 +133,9 @@
         <button class="btn btn-ghost btn-circle">          
           <MdiGithub/>
         </button>
-      </a>
+      </a> -->
   
-      <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme} class:hidden={!dropdownVisibleStart}>
+      <button title="Toggle Theme" class="btn btn-ghost btn-circle" on:click={toggleTheme}>
         {#if $theme == 'dark'}
           <MdiMoonWaningCrescent/>
         {:else if $theme == 'light'}
