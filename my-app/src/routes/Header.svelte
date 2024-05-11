@@ -11,7 +11,6 @@
   import { onMount } from 'svelte';
   
   let dropdownVisibleStart = true;
-  let navThreshholdSet = false;
 
   function toggleTheme(){
     theme.set($theme=="light"? "dark" : "light");
@@ -19,16 +18,14 @@
 
   function checkOverflow() {
     const navStart = document.getElementById('navStart');
-    if ($navThreshhold != 0){
-      navThreshholdSet = true
-    }
-    // console.log("scroll: "+navStart.scrollWidth)
+
+    // console.log("scroll: "+navStart?.scrollWidth)
     // console.log("client: "+navStart?.clientWidth)
-    // console.log("threshhold: "+navThreshhold)
-    if (navStart && !navThreshholdSet && navStart.scrollWidth != navStart.clientWidth){
-      navThreshholdSet = true;
+    // console.log("threshhold: "+$navThreshhold)
+    if (navStart && $navThreshhold == -1 && navStart.scrollWidth != navStart.clientWidth){
+      console.log("SET THRESHHOLD!")
       navThreshhold.set(navStart.scrollWidth)
-    } else if (navStart && navThreshholdSet && navStart.clientWidth < $navThreshhold) {
+    } else if (navStart && $navThreshhold != -1 && navStart.clientWidth < $navThreshhold) {
       dropdownVisibleStart = false;
     } else {
       dropdownVisibleStart = true;
@@ -80,7 +77,7 @@
   </div>
 
   <div id="navEnd" class="navbar-end">
-    <div class="dropdown" class:hidden={dropdownVisibleStart}>
+    <!-- <div class="dropdown" class:hidden={dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +93,7 @@
           /></svg
         >
       </div>
-      <!-- <ul class="dropdown-content shadow bg-base-100 rounded-box">
+      <ul class="dropdown-content shadow bg-base-100 rounded-box">
         <li>
           <a title="Email" href="mailto:alecparent@rocketmail.com">
             <button class="btn btn-ghost btn-circle">
@@ -120,8 +117,8 @@
             {/if}
           </button>
         </li>
-      </ul> -->
-    </div>
+      </ul>
+    </div> -->
 
       <!-- <a title="Email" href="mailto:alecparent@rocketmail.com" class:hidden={!dropdownVisibleStart}>
         <button class="btn btn-ghost btn-circle">
