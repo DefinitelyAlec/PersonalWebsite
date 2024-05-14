@@ -1,5 +1,7 @@
 <script lang="ts">
+    // @ts-ignore
     import MdiEmailOutline from '~icons/mdi/email-outline';
+    // @ts-ignore
     import MdiGithub from '~icons/mdi/github';
 </script>
 
