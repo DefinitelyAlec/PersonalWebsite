@@ -47,7 +47,7 @@
 
 <div class="navbar bg-base-100 m-0">
   <div id="navStart" class="navbar-start">
-    <div class="dropdown" class:hidden={dropdownVisibleStart}>
+    <!-- <div class="dropdown" class:hidden={dropdownVisibleStart}>
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,10 +69,10 @@
         <li><a href="/" class="home-btn">Home</a></li>
         <li><a href="/projects" class="projects-btn">Projects</a></li>
       </ul>
-    </div>
+    </div> -->
 
-      <a class="btn btn-ghost text-xl home-btn" href="/" class:hidden={!dropdownVisibleStart}>Home</a>
-      <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={!dropdownVisibleStart}>Projects</a>  
+      <a class="btn btn-ghost text-xl home-btn" href="/">Home</a>
+      <!-- <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={!dropdownVisibleStart}>Projects</a>   -->
     
   </div>
 
