@@ -93,7 +93,7 @@
   </a>
 </div>
 
-<div id="ProjectContainer">
+<div id="ProjectContainer" class="pt-24">
   <h1 class="text-3xl font-bold text-center py-12">Projects</h1>
 
   <div class="btnContainer">
