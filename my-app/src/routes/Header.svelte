@@ -71,7 +71,7 @@
       </ul>
     </div> -->
 
-      <a class="btn btn-ghost text-xl home-btn" href="/">Home</a>
+      <a class="btn btn-ghost text-xl home-btn" href="#pageTop">Home</a>
       <!-- <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={!dropdownVisibleStart}>Projects</a>   -->
     
   </div>

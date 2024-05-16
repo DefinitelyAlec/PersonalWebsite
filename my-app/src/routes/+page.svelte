@@ -5,6 +5,17 @@
   import MdiGithub from "~icons/mdi/github";
   import Project from "./Project.svelte";
 
+  // smooth scroll to any anchor element links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
   function manipulateDropdowns(className: String, open: Boolean) {
     const inputs = document.querySelectorAll(
       `.${className}`
@@ -71,7 +82,7 @@
   ];
 </script>
 
-<h1 class="text-3xl font-bold text-center py-12">
+<h1 id="pageTop" class="text-3xl font-bold text-center py-12">
   Alec Parent's Personal Website
 </h1>
 
