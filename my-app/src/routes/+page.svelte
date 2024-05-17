@@ -3,18 +3,21 @@
   import MdiEmailOutline from "~icons/mdi/email-outline";
   // @ts-ignore
   import MdiGithub from "~icons/mdi/github";
+  import { browser } from "$app/environment";
   import Project from "./Project.svelte";
 
   // smooth scroll to any anchor element links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  if (browser) {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
         });
+      });
     });
-});
+  }
 
   function manipulateDropdowns(className: String, open: Boolean) {
     const inputs = document.querySelectorAll(
