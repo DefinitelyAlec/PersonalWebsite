@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Project from "../Project.svelte";
+  import Project from "../../src/routes/Project.svelte";
 
   function manipulateDropdowns(className: String, open: Boolean) {
     const inputs = document.querySelectorAll(`.${className}`) as NodeListOf<HTMLInputElement>;
