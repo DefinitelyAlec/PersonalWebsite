@@ -4,13 +4,24 @@
     export let title = "Default Title";
     export let website = "";
     export let description = ["Default Description"];
+    export let startDate = "";
+    export let endDate = ""
 </script>
 
 <div class="py-6">
     <div class="collapse collapse-arrow bg-base-200">
         <input class="dropdown-input" type="checkbox" checked/> 
         <div class="collapse-title text-xl font-medium">
-            {title}
+            <div class="flex justify-between">
+                <div>
+                    {title}
+                </div>
+                <div>
+                    {#if startDate != "" && endDate != ""}
+                        {startDate} - {endDate}   
+                    {/if}
+                </div>
+            </div>
         </div>
         <div class="collapse-content prose max-w-full"> 
         <ul>
