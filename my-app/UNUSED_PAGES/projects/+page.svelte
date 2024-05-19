@@ -16,6 +16,8 @@
     {
       title: "This Website",
       skills: ["Svelte", "JS", "HTML", "CSS"],
+      startDate: "3-27-2024",
+      endDate: "CURRENT",
       description: [
         "Built out in Sveltekit using DaisyUI",
         "Focus on quick deliverability, maintainability, and strengthening common full tech-stack for future webapps",
@@ -26,6 +28,8 @@
       title: "Rock Paper Scissors Battle Royale",
       skills: ["JS", "HTML", "CSS", "ChatGPT"],
       website: "https://rps-sim.netlify.app/",
+      startDate: "6-1-2024",
+      endDate: "7-1-2024",
       description: [
         "Built out game in pure HTML/JS/CSS",
         "Leveraged ChatGPT to exponentially speed up development by generating boilerplate code and correcting/adding details",
@@ -36,6 +40,8 @@
       title: "Info Website for a Therapy Center",
       skills: ["JS", "HTML", "CSS"],
       website: "https://movingforwardutah.com/",
+      startDate: "4-1-2024",
+      endDate: "4-15-2024",
       description: [
         "Worked with Wordpress to improve existing site structure and content",
         "Built out custom HTML/JS/CSS solutions to fix what Wordpress couldn't deliver on",
@@ -47,6 +53,8 @@
       title: "Ecommerce Website for Mrs Hobby Shop",
       skills: ["React", "JS", "HTML", "CSS"],
       website: "https://mrshobby.com/",
+      startDate: "2-1-2024",
+      endDate: "2-15-2024",
       description: [
         "Made a React API to get the BigCommerce site to properly pull product based off their category",
         "Built realistic technical roadmap for client given the existing site and its constraints",
@@ -56,6 +64,8 @@
     {
       title: "Python Batch Program Installer",
       skills: ["Python", "Tkinter", "Multiprocessing"],
+      startDate: "3-1-2024",
+      endDate: "CURRENT",
       description: [
         "Made a batch installer in Python using Tkinter and leveraging Multiprocessing to chain together installations while timing them",
         "Developed a simple and intuitive UI to select programs desired to install and leave out",

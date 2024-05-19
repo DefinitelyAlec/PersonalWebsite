@@ -9,6 +9,7 @@
   import MdiWhiteBalanceSunny from '~icons/mdi/white-balance-sunny';
   import { theme, navThreshhold } from '../stores/content';
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   
   let dropdownVisibleStart = true;
 
@@ -42,6 +43,27 @@
     window.addEventListener('resize', checkOverflow)
     checkOverflow();
   });
+
+//   if (typeof browser !== "undefined" && browser) {
+//   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+//     anchor.addEventListener("click", (e) => {
+//       e.preventDefault();  // Prevent the default anchor behavior
+//       const targetId = anchor.getAttribute("href");
+//       const targetElement = document.querySelector(targetId);
+
+//       if (targetElement) {
+//         targetElement.scrollIntoView({
+//           behavior: "smooth",
+//           block: "start"  // Ensure the scroll targets the start of the element
+//         });
+//       }
+//     });
+//   });
+// }
+  // Scroll To Top
+  function scrollToTop() {
+    window.scroll({top: 0, behavior: 'smooth'});
+  }
   
 </script>
 
@@ -71,7 +93,7 @@
       </ul>
     </div> -->
 
-      <a class="btn btn-ghost text-xl home-btn" href="/#pageTop">Home</a>
+      <a class="btn btn-ghost text-xl" href="/#pageTop">Home</a>
       <!-- <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={!dropdownVisibleStart}>Projects</a>   -->
     
   </div>

@@ -10,14 +10,14 @@
   if (browser) {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
+        document.querySelector(e.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
         });
       });
     });
   }
+
+
 
   function manipulateDropdowns(className: String, open: Boolean) {
     const inputs = document.querySelectorAll(
@@ -136,6 +136,7 @@
     <Project {...project} />
   {/each}
 </div>
+
 
 <!-- styles -->
 <style>
