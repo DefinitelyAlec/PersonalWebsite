@@ -47,3 +47,12 @@
         </div>
     </div>
 </div>
+
+<style>
+    .collapse-content {
+        overflow: hidden;
+        transition: 0.3 ease-out;
+    }
+
+    
+</style>
