@@ -1,5 +1,4 @@
 <script>
-
     export let skills = [''];
     export let title = "Default Title";
     export let website = "";

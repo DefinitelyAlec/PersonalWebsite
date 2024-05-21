@@ -4,7 +4,7 @@
   import CircleCursor from "./CircleCursor.svelte";
 </script>
 
-<main>
+<main class="">
   <div class="page-container">
     <CircleCursor />
     
