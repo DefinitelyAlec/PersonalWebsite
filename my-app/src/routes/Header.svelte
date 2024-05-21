@@ -60,10 +60,6 @@
 //     });
 //   });
 // }
-
-  function scrollToTop() {
-    document.getElementById("pageTop")?.scrollIntoView()
-  }
   
 </script>
 
