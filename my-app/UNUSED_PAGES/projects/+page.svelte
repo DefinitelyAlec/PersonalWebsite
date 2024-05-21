@@ -78,15 +78,13 @@
 <h1 class="text-3xl font-bold text-center py-12">Projects</h1>
 
 <div class="btnContainer">
-  <button class="btn items-center" on:click={() => manipulateDropdowns("dropdown-input", true)}
-    >Open All</button
-  >
+  <button class="btn items-center" on:click={() => manipulateDropdowns("dropdown-input", true)}>
+    Open All
+  </button>
   
-  <button
-    class="btn"
-    on:click={() => manipulateDropdowns("dropdown-input", false)}
-    >Close All</button
-  >
+  <button class="btn" on:click={() => manipulateDropdowns("dropdown-input", false)}>
+    Close All
+  </button>
   
   <!-- search button? -->
   <!-- <button
