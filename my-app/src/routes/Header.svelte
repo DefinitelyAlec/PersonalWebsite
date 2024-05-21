@@ -11,27 +11,27 @@
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   
-  let dropdownVisibleStart = true;
+  // let dropdownVisibleStart = true;
 
   function toggleTheme(){
     theme.set($theme=="light"? "dark" : "light");
   }
 
-  function checkOverflow() {
-    const navStart = document.getElementById('navStart');
+  // function checkOverflow() {
+  //   const navStart = document.getElementById('navStart');
 
-    // console.log("scroll: "+navStart?.scrollWidth)
-    // console.log("client: "+navStart?.clientWidth)
-    // console.log("threshhold: "+$navThreshhold)
-    if (navStart && $navThreshhold == -1 && navStart.scrollWidth != navStart.clientWidth){
-      console.log("SET THRESHHOLD!")
-      navThreshhold.set(navStart.scrollWidth)
-    } else if (navStart && $navThreshhold != -1 && navStart.clientWidth < $navThreshhold) {
-      dropdownVisibleStart = false;
-    } else {
-      dropdownVisibleStart = true;
-    }
-  }
+  //   // console.log("scroll: "+navStart?.scrollWidth)
+  //   // console.log("client: "+navStart?.clientWidth)
+  //   // console.log("threshhold: "+$navThreshhold)
+  //   if (navStart && $navThreshhold == -1 && navStart.scrollWidth != navStart.clientWidth){
+  //     console.log("SET THRESHHOLD!")
+  //     navThreshhold.set(navStart.scrollWidth)
+  //   } else if (navStart && $navThreshhold != -1 && navStart.clientWidth < $navThreshhold) {
+  //     dropdownVisibleStart = false;
+  //   } else {
+  //     dropdownVisibleStart = true;
+  //   }
+  // }
 
   // mount the theme variable onto the data-theme attribute so it's dynamic
   onMount(() => {
@@ -40,8 +40,8 @@
     });
 
 
-    window.addEventListener('resize', checkOverflow)
-    checkOverflow();
+    // window.addEventListener('resize', checkOverflow)
+    // checkOverflow();
   });
 
 //   if (typeof browser !== "undefined" && browser) {
@@ -60,6 +60,10 @@
 //     });
 //   });
 // }
+
+  function scrollToTop() {
+    document.getElementById("pageTop")?.scrollIntoView()
+  }
   
 </script>
 
@@ -89,7 +93,7 @@
       </ul>
     </div> -->
 
-      <a class="btn btn-ghost text-xl" href="/#pageTop">Home</a>
+      <a class="btn btn-ghost text-xl" href="/#top">Home</a>
       <!-- <a class="btn btn-ghost text-xl projects-btn" href="/projects" class:hidden={!dropdownVisibleStart}>Projects</a>   -->
     
   </div>

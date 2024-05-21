@@ -85,7 +85,7 @@
   ];
 </script>
 
-<h1 id="pageTop" class="text-3xl font-bold text-center py-12">
+<h1 id="top" class="text-3xl font-bold text-center py-12">
   Alec Parent's Personal Website
 </h1>
 
